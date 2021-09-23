@@ -23,10 +23,10 @@ async function getDinoImage(){
  if(document.getElementById('dinoImage')!==null){
   document.getElementById('dinoImage').remove();
  }
- const img = document.createElement('img');
+ let img = document.createElement('img');
  img.id = "dinoImage";
  img.src = dinoImageUrl;
  img.alt = dinoAlt;
- document.getElementById('dinoName').appendChild(img);
+ document.querySelector('.generator').appendChild(img);
  
 }

@@ -1,4 +1,3 @@
-const { response } = require('express');
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -26,7 +25,7 @@ response.json(data);
 });
 
 app.get('/dinoimage',async (request,response) => {
- const dinoImage = await fetch("https://bing-image-search1.p.rapidapi.com/images/search?q=dinosaur&count=10", {
+ const dinoImage = await fetch("https://bing-image-search1.p.rapidapi.com/images/search?q=dinosaur&count=30", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "bing-image-search1.p.rapidapi.com",
