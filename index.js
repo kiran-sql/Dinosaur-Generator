@@ -4,6 +4,9 @@ const app = express();
 const port = 3000;
 const fetch = require('node-fetch')
 app.use(express.static("public"));
+require('dotenv').config();
+
+const apiKey = process.env.API_KEY;
 
 app.listen(port, () => {
  console.log("listening to port "+ port);
@@ -14,7 +17,7 @@ app.get('/dinoname',async (request, response) => {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "alexnormand-dino-ipsum.p.rapidapi.com",
-		"x-rapidapi-key": "029c63f251msh260fe6b936613f1p145710jsn5d265e7e25cf"
+		"x-rapidapi-key": apiKey
 	}
 });
 const data = await dinoResponse.json();
@@ -27,7 +30,7 @@ app.get('/dinoimage',async (request,response) => {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "bing-image-search1.p.rapidapi.com",
-		"x-rapidapi-key": "029c63f251msh260fe6b936613f1p145710jsn5d265e7e25cf"
+		"x-rapidapi-key": apiKey
 	}
 });
  const image = await dinoImage.json();
